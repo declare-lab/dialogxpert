@@ -113,21 +113,18 @@ def get_args_train():
 
     parser.add_argument('--data_name', type=str, default='p4g', choices=['esc','cima','cb', 'p4g', 'extes'],
                         help='One of {esc, cima, cb}.')
-    parser.add_argument('--system', type=str, default='vicuna', choices=['vicuna','chatgpt','llama2'],
+    parser.add_argument('--system', type=str, default='Qwen2.5-14B', choices=['vicuna','chatgpt','llama2'],
                         help='One of {vicuna, chatgpt, llama2}.')
-    parser.add_argument('--user', type=str, default='vicuna', choices=['vicuna','chatgpt','llama2'],
+    parser.add_argument('--user', type=str, default='Qwen2.5-14B', choices=['vicuna','chatgpt','llama2'],
                         help='One of {vicuna, chatgpt, llama2}.')
-    parser.add_argument('--critic', type=str, default='vicuna', choices=['vicuna','chatgpt','llama2'],
+    parser.add_argument('--critic', type=str, default='Qwen2.5-14B', choices=['vicuna','chatgpt','llama2'],
                         help='One of {vicuna, chatgpt, llama2}.')
-    parser.add_argument('--sft_dir', default='sft', #../pretrain/outputs/best_pretrain.pt
-                        type=str, help="Pretrain model path.")
     parser.add_argument('--max_turn', type=int, default=8, help='max conversation turn')
     parser.add_argument('--mode', type=str, default='train', help='the mode in [train, test]')
     parser.add_argument('--load_rl_epoch', type=int, default=0, help='load agent from epoch')
 
 
     parser.add_argument("--epsilon", type = float, default = 0.5, help="The balance of exploration or exploitation")
-    parser.add_argument("--cache_dir", default='/storage_fast/ydeng/plm', type=str, help="The cache directory.")
     parser.add_argument("--max_new_tokens", type=int, default=200)
     parser.add_argument("--max_seq_length", default=512, type=int,
                         help="The maximum total input sequence length after tokenization. Sequences longer "

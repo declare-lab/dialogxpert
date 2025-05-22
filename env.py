@@ -193,7 +193,7 @@ class Env(object):
         full_conv = get_full_conversation(state)
 
         # Choose the action list from LLM
-        prompt = P4G_prompt(self._user_emotions, full_conv, options)
+        prompt = ExTES_prompt(self._user_emotions, full_conv, options)
 
         # Prepare the input: Text to Token IDs
         formatted_prompt = self._llm_tokenizer.apply_chat_template(

@@ -22,7 +22,17 @@ NOTE:
 
 ### Training the model
 
+Before you train the model:
+- Decide the dataset to use
+- Make the changes to the dataset arg (`get_args_train` -> *--data_name* parameter)
+- Make changes to the necessary functions in the code in `env.py`:
+    - LLM Policy Prompt: Replace with {dataset_name}_prompt (choose from `qwen_prompts.py`)
+    - Roleplay functions: Replace with {dataset_name}_roleplay (choose from `qwen_prompts.py`)
+
+After you are set, run:
+
 ```
+python train_model.py
 ```
 
 ---
