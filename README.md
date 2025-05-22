@@ -49,8 +49,3 @@ The following repositories are given credit for their open-source code utilizati
 
 ---
 
-### Evaluation
-
-To comply with the double-blind nature of the review process, we have withheld model weights and evaluation scripts that could potentially reveal author identity (e.g: sharing of model weights via google drive links or metadata). 
-
-All model weights and evaluation code will be released upon paper acceptance.
