@@ -37,7 +37,12 @@ python train_model.py
 
 ---
 
-### Loading the weights (Inference)
+### Repository Credits
+
+The following repositories are given credit for their open-source code utilization
 
 ```
+- PPDPP: https://github.com/dengyang17/PPDPP/tree/main
+- DPDP: https://github.com/cs-holder/DPDP/tree/main
+- RL-LLM: https://github.com/yanxue7/RL-LLM-Prior/tree/main
 ```
