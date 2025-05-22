@@ -1,0 +1,27 @@
+greeting, passive_response, passive_response
+off-task, passive_response, passive_response
+personal-related-inquiry, inquiry, inquiry
+neutral-to-inquiry, inquiry, inquiry
+other, passive_response, passive_response
+source-related-inquiry, inquiry, inquiry
+credibility-appeal, credibility appeal, appeal
+self-modeling, self-modeling, appeal
+proposition-of-donation, proposition-of-donation, proposition
+positive-to-inquiry, passive_response, passive_response
+logical-appeal, logical appeal, appeal
+thank, passive_response, passive_response
+task-related-inquiry, inquiry, inquiry
+foot-in-the-door, foot-in-the-door, appeal
+donation-information, donation information, appeal
+acknowledgement, passive_response, passive_response
+negative-to-inquiry, passive_response, passive_response
+emotion-appeal, emotional appeal, appeal
+personal-story, personal story, appeal
+comment-partner, passive_response, passive_response
+praise-user, passive_response, passive_response
+ask-donation-amount, ask-donation-amount, proposition
+closing, passive_response, passive_response
+ask-not-donate-reason, passive_response, passive_response
+ask-donate-more, proposition, proposition
+you-are-welcome, passive_response, passive_response
+confirm-donation, passive_response, passive_response
