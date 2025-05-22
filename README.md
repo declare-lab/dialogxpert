@@ -1,6 +1,6 @@
 # dialogxpert
 
-Codebase for ProactiveAI in conversations
+Codebase for **ProactiveAI in Conversations** — an approach combining LLM priors with Q-adapters for task-oriented dialogue planning.
 
 ---
 
@@ -47,4 +47,10 @@ The following repositories are given credit for their open-source code utilizati
 - RL-LLM: https://github.com/yanxue7/RL-LLM-Prior/tree/main
 ```
 
-NOTE: Model weights will be released upon acceptance in order to preserve anonymity of the double-blind review process.
+---
+
+### Evaluation
+
+Evaluation scripts are not included in this repository to avoid leakage of anonymity during the double-blind review process.
+
+Model weights will be released upon acceptance in order to preserve anonymity of the double-blind review process.

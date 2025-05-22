@@ -25,7 +25,6 @@ CBAct = {'greet': 'Please say hello or chat randomly.',
          'agree': 'Please agree with the proposed price.',
          'disagree': 'Please disagree with the proposed price.'}
 
-# LLM aided in creating the full prompt meaning
 ExTESAct = {
     "Reflective Statements": "Please reflect back what the user has expressed to show you understand their thoughts or feelings.",
     "Clarification": "Please ask a question to clarify what the user meant or provide more detail about what they said.",
