@@ -14,6 +14,14 @@ This repo explains the following parts:
 
 ![Description](images/architecture.png)
 
+The architecture diagram consists of the following main components:
+- Policy Planner:
+- Self-Play:
+- Critic LLM:
+- Replay Buffer:
+
+Reinforcement learning is done based on the replay buffer
+
 ---
 
 ### Downloading LLM Weights
