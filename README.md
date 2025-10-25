@@ -2,6 +2,18 @@
 
 Codebase for **ProactiveAI in Conversations** — an approach combining LLM priors with Q-adapters for task-oriented dialogue planning.
 
+This repo explains the following parts:
+- Downloading LLM Weights
+- How the model is trained
+- How the model flows based on the architecture
+- Extra information
+
+---
+
+#### Architecure Breakdown
+
+![Description](images/architecture.png)
+
 ---
 
 ### Downloading LLM Weights
