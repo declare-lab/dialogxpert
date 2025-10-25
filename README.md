@@ -28,6 +28,10 @@ Reinforcement learning is done based on the replay buffer
 
 Download the LLM model weights locally (it's easier because its faster to load!)
 
+Steps:
+
+1. Adjust the model name: https://github.com/declare-lab/dialogxpert/blob/master/download_llm_weights.py#L4-5
+
 ```
 python download_llm_weights.py
 ```
@@ -54,6 +58,42 @@ After you are set, run:
 ```
 python train_model.py
 ```
+
+---
+
+#### How Self-Play works
+
+Training starts:
+
+Episode loading:
+
+Action selection:
+
+Self-play (User):
+
+Self-play (System):
+
+Critic LLM:
+
+Replay Buffer:
+
+Status Check:
+
+---
+
+#### How Q-learning is done
+
+Training the network:
+
+Adjustments:
+
+---
+
+#### Others
+
+Prompts:
+
+Testing:
 
 ---
 
