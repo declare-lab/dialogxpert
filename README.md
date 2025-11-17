@@ -63,21 +63,21 @@ python train_model.py
 
 #### How Self-Play works
 
-Training starts:
+Training starts: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L165
 
-Episode loading:
+Episode loading: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L170
 
-Action selection:
+Action selection: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L178
 
-Self-play (User):
+Self-play (System): https://github.com/declare-lab/dialogxpert/blob/master/env.py#L417
 
-Self-play (System):
+Self-play (User):  https://github.com/declare-lab/dialogxpert/blob/master/env.py#L435
 
-Critic LLM:
+Critic LLM: https://github.com/declare-lab/dialogxpert/blob/master/env.py#L443
 
-Replay Buffer:
+Replay Buffer: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L228
 
-Status Check:
+Status Check: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L243
 
 ---
 
