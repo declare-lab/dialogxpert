@@ -91,9 +91,9 @@ Adjustments: https://github.com/declare-lab/dialogxpert/blob/master/llm_priors.p
 
 #### Others
 
-Prompts:
+Prompts: https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py
 
-Testing:
+Testing: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L24
 
 ---
 
