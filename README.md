@@ -83,9 +83,9 @@ Status Check: https://github.com/declare-lab/dialogxpert/blob/master/train_model
 
 #### How Q-learning is done
 
-Training the network:
+Training the network: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L255
 
-Adjustments:
+Adjustments: https://github.com/declare-lab/dialogxpert/blob/master/llm_priors.py#L87
 
 ---
 
