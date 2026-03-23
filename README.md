@@ -11,13 +11,13 @@ Proactive dialogue systems require efficient action selection under large action
 
 ## Highlights
 
-- **Action space reduction**: Leveraging LLM priors to reduce action space by selecting the top-k actions, thereby reducing the number of required sample episodes and replace the need for fine-tuning.
+- **Action space reduction**: Leverages LLM priors to select top-k candidate actions, reducing the effective action space and improving sample efficiency without requiring fine-tuning.
 
-- **Emotion-aware planning**: Introduce a novel integration of emotion trajectories in goal-driven conversations, thus enabling emotion-aware action selection in goal-driven conversations.
+- **Emotion-aware planning**: Introduces the integration of emotion trajectories into goal-driven dialogue, enabling context-aware and emotionally informed action selection.
 
-- **Deep Q-learning**: Current state-of-the-art (SOTA) approaches uses MCTS and Diffusion-based approaches, which involves costly planning. Our approach uses Deep Q-learning and combines with the subset action list. This approach improves efficiency by reducing LLM calls from 30 to 4, while achiving competitive performance with the SOTA.
+- **Deep Q-learning**: Unlike existing state-of-the-art (SOTA) approaches that rely on MCTS or diffusion-based planning, our method uses Deep Q-learning over a reduced action space. This significantly improves efficiency, reducing LLM calls from 30 to 4 while maintaining competitive performance.
 
-- **Multi-dataset approach**: Evaluated on the following dataset domains: emotional support, negotiation, tutoring, and persuasion. Dataset information are explained in the following section.
+- **Multi-dataset approach**: Evaluated across multiple dialogue domains, including emotional support, negotiation, tutoring, and persuasion. See the dataset section for details.
 
 ## Datasets
 
