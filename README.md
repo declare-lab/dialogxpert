@@ -23,12 +23,11 @@ Proactive dialogue systems require efficient action selection under large action
 
 The following datasets have been utilized: 
 
-- [ESConv](paper_link): Emotional support conversation.
-- [CIMA](paper_link): Tutoring dialogue dataset.
-- [CraigstlistBargain (CB)](paper_link): Neogitation dialogues
-- [ExTES](paper_link): Emotional support conversation (similar to ESConv).
-- [P4G](paper_link): Persuasion dialogues.
-
+- [ESConv](https://aclanthology.org/2021.acl-long.269/): Emotional support conversation.
+- [CIMA](https://aclanthology.org/2020.bea-1.5/): Tutoring dialogue dataset.
+- [CraigstlistBargain (CB)](https://aclanthology.org/D18-1256/): Neogitation dialogues
+- [ExTES](https://aclanthology.org/2024.acl-long.611/): Emotional support conversation (similar to ESConv).
+- [P4G](https://aclanthology.org/P19-1566/): Persuasion dialogues.
 
 All datasets (training, validation, and test splits) are included in this repository under the `data/` directory.
 
