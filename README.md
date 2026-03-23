@@ -17,9 +17,20 @@ Proactive dialogue systems require efficient action selection under large action
 
 - **Deep Q-learning**: Unlike existing state-of-the-art (SOTA) approaches that rely on MCTS or diffusion-based planning, our method uses Deep Q-learning over a reduced action space. This significantly improves efficiency, reducing LLM calls from 30 to 4 while maintaining competitive performance.
 
-- **Multi-dataset approach**: Evaluated across multiple dialogue domains, including emotional support, negotiation, tutoring, and persuasion. See the dataset section for details.
+- **Multi-dataset approach**: Evaluated across multiple dialogue domains, including emotional support (ESConv, ExTES), negotiation (CB), tutoring (CIMA), and persuasion (P4G). See the dataset section for details.
 
 ## Datasets
+
+The following datasets have been utilized: 
+
+- [ESConv](paper_link): Emotional support conversation.
+- [CIMA](paper_link): Tutoring dialogue dataset.
+- [CraigstlistBargain (CB)](paper_link): Neogitation dialogues
+- [ExTES](paper_link): Emotional support conversation (similar to ESConv).
+- [P4G](paper_link): Persuasion dialogues.
+
+
+All datasets (training, validation, and test splits) are included in this repository under the `data/` directory.
 
 ## Usage
 
