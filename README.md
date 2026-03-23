@@ -33,6 +33,43 @@ All datasets (training, validation, and test splits) are included in this reposi
 
 ## Usage
 
+#### Downloading the LLM weights
+
+Download the LLM model weights locally (it's easier because its faster to load!):
+
+1. Adjust the model name: https://github.com/declare-lab/dialogxpert/blob/master/download_llm_weights.py#L4-5
+
+2. Run `python download_llm_weights.py`
+
+NOTE: 
+
+- You will need to change the `repo_id` in `download_llm_weights.py` to change the LLM model weights to download.
+
+- Please ensure that you are logged into huggingface and have the necessary tokens enabled.
+
+#### Begin training
+
+Firstly, decide which dataset to use. Then, make the changes to the dataset arg (`get_args_train` -> *--data_name* parameter)
+
+Lastly, make changes to the necessary functions in the code in `env.py`:
+- LLM Policy Prompt: Replace with {dataset_name}_prompt (choose from `qwen_prompts.py`) [here](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L196). Choose from the full list of prompt functions [here](https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py).
+
+- Roleplay functions: Replace with {dataset_name}_roleplay (choose from `qwen_prompts.py`)
+
+After you are set, run: `python train_model.py --data_name <dataset_name>`
+
+For example:
+- Let's say you want to use the "ExTES" dataset.
+- First, update the function name for the [policy prompt](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L196).
+- Then, update the function name for the roleplay prompt for [system](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L418) and [user] (https://github.com/declare-lab/dialogxpert/blob/master/env.py#L435)
+- Lastly: update the function name for the [critic prompt](https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py#L165)
+
+#### Evaluation
+
+All evaluations are conducted automatically:
+- Per epoch checks (Average turn, Success rate): https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L24
+- Self-play (turn-by-turn checks): https://github.com/declare-lab/dialogxpert/blob/master/env.py#L443
+
 ## Framework Overview
 
 ## Reference
@@ -67,38 +104,9 @@ Reinforcement learning is done based on the replay buffer
 
 ### Downloading LLM Weights
 
-Download the LLM model weights locally (it's easier because its faster to load!)
-
-Steps:
-
-1. Adjust the model name: https://github.com/declare-lab/dialogxpert/blob/master/download_llm_weights.py#L4-5
-
-```
-python download_llm_weights.py
-```
-
-NOTE: 
-
-- You will need to change the `repo_id` in `download_llm_weights.py` to change the LLM weights to download.
-
-- Please ensure that you are logged into huggingface and have the necessary tokens enabled.
-
 ---
 
 ### Training the model
-
-Before you train the model:
-- Decide the dataset to use
-- Make the changes to the dataset arg (`get_args_train` -> *--data_name* parameter)
-- Make changes to the necessary functions in the code in `env.py`:
-    - LLM Policy Prompt: Replace with {dataset_name}_prompt (choose from `qwen_prompts.py`)
-    - Roleplay functions: Replace with {dataset_name}_roleplay (choose from `qwen_prompts.py`)
-
-After you are set, run:
-
-```
-python train_model.py
-```
 
 ---
 
