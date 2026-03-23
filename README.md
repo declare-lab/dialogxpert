@@ -1,4 +1,20 @@
-# dialogxpert
+# [AAAI26] DialogXpert: Driving Intelligent and Emotion-Aware Conversations Through Online Value-Based Reinforcement Learning with LLM Priors
+
+## Introduction
+
+## Highlights
+
+## Datasets
+
+## Usage
+
+## Framework Overview
+
+## Reference
+
+...
+
+_Old information_
 
 Codebase for **ProactiveAI in Conversations** — an approach combining LLM priors with Q-adapters for task-oriented dialogue planning.
 
