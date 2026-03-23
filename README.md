@@ -88,9 +88,9 @@ Evaluation is performed automatically during training itself:
 
 #### Extra information
 
-Results may vary slightly due to stochastic training, Q-learning via reinforcement learning, LLM sampling, and hardware differences. We recommend fixing random seeds and using consistent environments for reproducibility.
+Results may vary slightly due to stochastic training, Q-learning, LLM sampling, and hardware differences. We recommend fixing random seeds and using consistent environments for reproducibility.
 
-The current implementation uses manual prompt configuration to maintain flexibility across diverse dialogue domains. Future updates will include automated dataset-specific configuration. We apologize for the inconvenice.
+The current implementation uses manual prompt configuration to support flexibility across diverse dialogue domains. Future updates will include automated dataset-specific configuration.
 
 ## Framework Overview
 
