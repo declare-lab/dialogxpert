@@ -33,42 +33,64 @@ All datasets (training, validation, and test splits) are included in this reposi
 
 ## Usage
 
-#### Downloading the LLM weights
+### Quick Start
 
-Download the LLM model weights locally (it's easier because its faster to load!):
+To train the model on a specific dataset, run `python train_model.py --data_name <dataset_name>`
 
-1. Adjust the model name: https://github.com/declare-lab/dialogxpert/blob/master/download_llm_weights.py#L4-5
+**NOTE**: Dataset-specific prompt configuration is required before training (see below).
+
+### Downloading the LLM weights
+
+Download the LLM model weights locally:
+
+1. Set the desired model name in `download_llm_weights` (Lines 4-5): https://github.com/declare-lab/dialogxpert/blob/master/download_llm_weights.py#L4-5
 
 2. Run `python download_llm_weights.py`
 
-NOTE: 
+NOTES: 
 
-- You will need to change the `repo_id` in `download_llm_weights.py` to change the LLM model weights to download.
+- Update the `repo_id` in `download_llm_weights.py` to select the desired model.
 
-- Please ensure that you are logged into huggingface and have the necessary tokens enabled.
+- Ensure that you are logged into huggingface with the appropriate access token.
 
-#### Begin training
+#### Dataset-Specific Configuration
 
-Firstly, decide which dataset to use. Then, make the changes to the dataset arg (`get_args_train` -> *--data_name* parameter)
+Due to differences across dialogue domains, prompt and roleplay functions must be configured manually for each dataset.
 
-Lastly, make changes to the necessary functions in the code in `env.py`:
-- LLM Policy Prompt: Replace with {dataset_name}_prompt (choose from `qwen_prompts.py`) [here](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L196). Choose from the full list of prompt functions [here](https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py).
+For a selected dataset `<dataset_name>`, update the following components:
 
-- Roleplay functions: Replace with {dataset_name}_roleplay (choose from `qwen_prompts.py`)
+- **Policy Prompt**: Replace with `{dataset_name}_prompt` in: https://github.com/declare-lab/dialogxpert/blob/master/env.py#L196
 
-After you are set, run: `python train_model.py --data_name <dataset_name>`
+- **Roleplay Functions**: Replace with {dataset_name}_roleplay:
 
-For example:
-- Let's say you want to use the "ExTES" dataset.
-- First, update the function name for the [policy prompt](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L196).
-- Then, update the function name for the roleplay prompt for [system](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L418) and [user] (https://github.com/declare-lab/dialogxpert/blob/master/env.py#L435)
-- Lastly: update the function name for the [critic prompt](https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py#L165)
+    - _System roleplay_: https://github.com/declare-lab/dialogxpert/blob/master/env.py#L418
+
+    - _User roleplay_: https://github.com/declare-lab/dialogxpert/blob/master/env.py#L435
+
+    - _Critic_: https://github.com/declare-lab/dialogxpert/blob/master/env.py#L326
+
+    - Example: For the ExTES dataset, replace all relevant functions with `extes_*` variants.
+
+All the available prompt functions can be found in: https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py
+
+#### Training
+
+After completing the configuration, run `python train_model.py --data_name <dataset_name>`
+
+Example: `python train_model.py --data_name ExTES`
 
 #### Evaluation
 
-All evaluations are conducted automatically:
-- Per epoch checks (Average turn, Success rate): https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L24
-- Self-play (turn-by-turn checks): https://github.com/declare-lab/dialogxpert/blob/master/env.py#L443
+Evaluation is performed automatically during training itself:
+
+- Per-epoch metrics: Average turns, success rate (https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L24)
+- Self-play evaluation (turn-level): https://github.com/declare-lab/dialogxpert/blob/master/env.py#L443
+
+#### Extra information
+
+Results may vary slightly due to stochastic training, Q-learning via reinforcement learning, LLM sampling, and hardware differences. We recommend fixing random seeds and using consistent environments for reproducibility.
+
+The current implementation uses manual prompt configuration to maintain flexibility across diverse dialogue domains. Future updates will include automated dataset-specific configuration. We apologize for the inconvenice.
 
 ## Framework Overview
 
@@ -102,13 +124,7 @@ Reinforcement learning is done based on the replay buffer
 
 ---
 
-### Downloading LLM Weights
 
----
-
-### Training the model
-
----
 
 #### How Self-Play works
 
