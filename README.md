@@ -2,6 +2,17 @@
 
 ## Introduction
 
+Codebase implementation for our AAAI26 paper [**AAAI26 paper**](https://ojs.aaai.org/index.php/AAAI/article/view/40244). This paper is a combination of the following parts: LLM priors (leveraging prior knowledge to select subset of actions), emotion-trajectory (keep track of emotions), and Q-learning (select the optimal action).
+
+The main higihlights of the paper (and in this repository) are:
+
+- **Action space reduction**: Leveraging LLM priors to reduce
+action space by  selecting the top-k actions, thereby reducing the number of required sample
+episodes and replace the need for fine-tuning.
+
+- **Emotion-aware planning**: Introduce a novel integration
+of emotion trajectories in goal-driven conversations, thus enabling emotion-aware action selection in goal-driven conversations.
+
 ## Highlights
 
 ## Datasets
