@@ -1,5 +1,7 @@
 # [AAAI26] DialogXpert: Driving Intelligent and Emotion-Aware Conversations Through Online Value-Based Reinforcement Learning with LLM Priors
 
+![Description](images/architecture.png)
+
 ## Introduction
 
 Codebase for our AAAI26 paper: [**DialogXpert**](https://ojs.aaai.org/index.php/AAAI/article/view/40244). 
@@ -19,6 +21,13 @@ Proactive dialogue systems require efficient action selection under large action
 
 - **Multi-dataset approach**: Evaluated across multiple dialogue domains, including emotional support (ESConv, ExTES), negotiation (CB), tutoring (CIMA), and persuasion (P4G). See the dataset section for details.
 
+## Framework Overview
+
+- LLM Priors: 
+- Emotion trajectory: 
+- Action selection: 
+- Q-learning: 
+
 ## Datasets
 
 The following datasets have been utilized: 
@@ -31,7 +40,7 @@ The following datasets have been utilized:
 
 All datasets (training, validation, and test splits) are included in this repository under the `data/` directory.
 
-## Usage
+## Implementation
 
 ### Quick Start
 
@@ -53,7 +62,7 @@ NOTES:
 
 - Ensure that you are logged into huggingface with the appropriate access token.
 
-#### Dataset-Specific Configuration
+### Dataset-Specific Configuration
 
 Due to differences across dialogue domains, prompt and roleplay functions must be configured manually for each dataset.
 
@@ -73,26 +82,32 @@ For a selected dataset `<dataset_name>`, update the following components:
 
 All the available prompt functions can be found in: https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py
 
-#### Training
+### Training
 
 After completing the configuration, run `python train_model.py --data_name <dataset_name>`
 
-Example: `python train_model.py --data_name ExTES`
-
-#### Evaluation
+> Example: `python train_model.py --data_name ExTES`
 
 Evaluation is performed automatically during training itself:
 
 - Per-epoch metrics: Average turns, success rate (https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L24)
 - Self-play evaluation (turn-level): https://github.com/declare-lab/dialogxpert/blob/master/env.py#L443
 
-#### Extra information
+### Extra information
 
 Results may vary slightly due to stochastic training, Q-learning, LLM sampling, and hardware differences. We recommend fixing random seeds and using consistent environments for reproducibility.
 
-The current implementation uses manual prompt configuration to support flexibility across diverse dialogue domains. Future updates will include automated dataset-specific configuration.
+The current implementation uses manual prompt configuration to support flexibility across diverse dialogue domains. While this requires minor manual setup, it enables flexible adaptation across multiple dialogue domains. Future updates will include automated dataset-specific configuration.
 
-## Framework Overview
+## Repository Credits
+
+The following repositories are given credit for their open-source code utilization
+
+```
+- PPDPP: https://github.com/dengyang17/PPDPP/tree/main
+- DPDP: https://github.com/cs-holder/DPDP/tree/main
+- RL-LLM: https://github.com/yanxue7/RL-LLM-Prior/tree/main
+```
 
 ## Reference
 
@@ -111,8 +126,6 @@ This repo explains the following parts:
 ---
 
 #### Architecure Breakdown
-
-![Description](images/architecture.png)
 
 The architecture diagram consists of the following main components:
 - Policy Planner:
@@ -159,18 +172,6 @@ Adjustments: https://github.com/declare-lab/dialogxpert/blob/master/llm_priors.p
 Prompts: https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py
 
 Testing: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L24
-
----
-
-### Repository Credits
-
-The following repositories are given credit for their open-source code utilization
-
-```
-- PPDPP: https://github.com/dengyang17/PPDPP/tree/main
-- DPDP: https://github.com/cs-holder/DPDP/tree/main
-- RL-LLM: https://github.com/yanxue7/RL-LLM-Prior/tree/main
-```
 
 ---
 
