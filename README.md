@@ -21,12 +21,14 @@ Proactive dialogue systems require efficient action selection under large action
 
 - **Multi-dataset approach**: Evaluated across multiple dialogue domains, including emotional support (ESConv, ExTES), negotiation (CB), tutoring (CIMA), and persuasion (P4G). See the dataset section for details.
 
-## Framework Overview
+## Architecture Code Mapping
 
-- LLM Priors: 
-- Emotion trajectory: 
-- Action selection: 
+- LLM Priors: [`env.py`](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L190) (Full function get_prior_actions_llm)
+- Emotion trajectory:  [`env.py`](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L427) (Storage done on Line 429)
+- Action selection: [`train_model.py`](https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L180) (Lines 180-196)
 - Q-learning: 
+    - Buffer storage: [`train_model.py`](https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L228) (Done for every conversation turn)
+    - Training: [`train_model.py`](https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L255) (Done every epoch)
 
 ## Datasets
 
@@ -110,18 +112,6 @@ The following repositories are given credit for their open-source code utilizati
 ```
 
 ## Reference
-
-...
-
-_Old information_
-
-Codebase for **ProactiveAI in Conversations** — an approach combining LLM priors with Q-adapters for task-oriented dialogue planning.
-
-This repo explains the following parts:
-- Downloading LLM Weights
-- How the model is trained
-- How the model flows based on the architecture
-- Extra information
 
 ---
 
