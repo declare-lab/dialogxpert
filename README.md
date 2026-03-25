@@ -111,7 +111,14 @@ The current implementation uses manual prompt configuration to support flexibili
 If you find our work useful, please cite
 
 ```
-
+@inproceedings{rakib2026dialogxpert,
+  title={DialogXpert: Driving Intelligent and Emotion-Aware Conversations Through Online Value-Based Reinforcement Learning with LLM Priors},
+  author={Abdur Rakib, Tazeek Bin and Mehrish, Ambuj and Soon, Lay-Ki and Lim, Wern Han and Poria, Soujanya},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2026},
+  doi={10.1609/aaai.v40i36.40244},
+  url={https://ojs.aaai.org/index.php/AAAI/article/view/40244}
+}
 ```
 
 ## Repository Credits
@@ -123,5 +130,4 @@ The following repositories are given credit for their open-source code utilizati
 - DPDP: https://github.com/cs-holder/DPDP/tree/main
 - RL-LLM: https://github.com/yanxue7/RL-LLM-Prior/tree/main
 ```
-
 
