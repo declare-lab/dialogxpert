@@ -2,11 +2,16 @@
 
 ![Description](images/architecture.png)
 
+<p align="center">
+   <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40244" target="_blank">Official Paper (AAAI26 Proceedings)</a> &nbsp; | &nbsp;
+  <a href="https://drive.google.com/file/d/1ktTEJomjhGOumFx79QQhDnDGQJ4qgRkO/view?usp=sharing" target="_blank">Extended Paper (Appendix)</a>
+</p>
+
+**NOTE**: The extended paper is a self-hosted extended version, including appendices and additional experiments. **_The official AAAI paper should be cited for publication purposes._**
+
 ## Introduction
 
-Codebase for our AAAI26 paper: [**DialogXpert**](https://ojs.aaai.org/index.php/AAAI/article/view/40244). 
-
-Proactive dialogue systems require efficient action selection under large action spaces and evolving conversational dynamics. Hence, This repository implements a proactive dialogue planning framework that integrates:
+Proactive dialogue systems require efficient action selection under large action spaces and evolving conversational dynamics. Hence, this repository implements a proactive dialogue planning framework that integrates:
 - **LLM Priors**: to generate a rational set of action candidates.
 - **Emotion Trajectory Modeling**: to track conversational dynamics.
 - **Q-learning**: to select the optimal action from the subset of action candidates.
@@ -101,6 +106,14 @@ Results may vary slightly due to stochastic training, Q-learning, LLM sampling, 
 
 The current implementation uses manual prompt configuration to support flexibility across diverse dialogue domains. While this requires minor manual setup, it enables flexible adaptation across multiple dialogue domains. Future updates will include automated dataset-specific configuration.
 
+## Citation
+
+If you find our work useful, please cite
+
+```
+
+```
+
 ## Repository Credits
 
 The following repositories are given credit for their open-source code utilization
@@ -111,57 +124,4 @@ The following repositories are given credit for their open-source code utilizati
 - RL-LLM: https://github.com/yanxue7/RL-LLM-Prior/tree/main
 ```
 
-## Reference
-
----
-
-#### Architecure Breakdown
-
-The architecture diagram consists of the following main components:
-- Policy Planner:
-- Self-Play:
-- Critic LLM:
-- Replay Buffer:
-
-Reinforcement learning is done based on the replay buffer
-
----
-
-
-
-#### How Self-Play works
-
-Training starts: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L165
-
-Episode loading: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L170
-
-Action selection: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L178
-
-Self-play (System): https://github.com/declare-lab/dialogxpert/blob/master/env.py#L417
-
-Self-play (User):  https://github.com/declare-lab/dialogxpert/blob/master/env.py#L435
-
-Critic LLM: https://github.com/declare-lab/dialogxpert/blob/master/env.py#L443
-
-Replay Buffer: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L228
-
-Status Check: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L243
-
----
-
-#### How Q-learning is done
-
-Training the network: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L255
-
-Adjustments: https://github.com/declare-lab/dialogxpert/blob/master/llm_priors.py#L87
-
----
-
-#### Others
-
-Prompts: https://github.com/declare-lab/dialogxpert/blob/master/qwen_prompts.py
-
-Testing: https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L24
-
----
 
