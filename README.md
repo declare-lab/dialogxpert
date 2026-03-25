@@ -28,7 +28,7 @@ Proactive dialogue systems require efficient action selection under large action
 
 ## Architecture Code Mapping
 
-- LLM Priors: [`env.py`](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L190) (Full function get_prior_actions_llm)
+- LLM Priors: [`env.py`](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L190) (Function: `get_prior_actions_llm`)
 - Emotion trajectory:  [`env.py`](https://github.com/declare-lab/dialogxpert/blob/master/env.py#L427) (Storage done on Line 429)
 - Action selection: [`train_model.py`](https://github.com/declare-lab/dialogxpert/blob/master/train_model.py#L180) (Lines 180-196)
 - Q-learning: 
@@ -41,7 +41,7 @@ The following datasets have been utilized:
 
 - [ESConv](https://aclanthology.org/2021.acl-long.269/): Emotional support conversation.
 - [CIMA](https://aclanthology.org/2020.bea-1.5/): Tutoring dialogue dataset.
-- [CraigstlistBargain (CB)](https://aclanthology.org/D18-1256/): Neogitation dialogues
+- [CraigstlistBargain (CB)](https://aclanthology.org/D18-1256/): Negotiation dialogues
 - [ExTES](https://aclanthology.org/2024.acl-long.611/): Emotional support conversation (similar to ESConv).
 - [P4G](https://aclanthology.org/P19-1566/): Persuasion dialogues.
 
@@ -108,7 +108,7 @@ The current implementation uses manual prompt configuration to support flexibili
 
 ## Citation
 
-If you find our work useful, please cite
+If you find our work useful, please cite the official AAAI paper:
 
 ```
 @inproceedings{rakib2026dialogxpert,
