@@ -111,7 +111,7 @@ def get_args_train():
     parser.add_argument('--gamma', type=float, default=0.999, help='reward discount factor.')
     parser.add_argument('--lr', type=float, default=1e-3, help='learning rate.')
 
-    parser.add_argument('--data_name', type=str, default='p4g', choices=['esc','cima','cb', 'p4g', 'extes'],
+    parser.add_argument('--data_name', type=str, default='extes', choices=['esc','cima','cb', 'p4g', 'extes'],
                         help='One of {esc, cima, cb}.')
     parser.add_argument('--system', type=str, default='Qwen2.5-14B', choices=['vicuna','chatgpt','llama2'],
                         help='One of {vicuna, chatgpt, llama2}.')
